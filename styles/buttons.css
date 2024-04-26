@@ -1,0 +1,162 @@
+.button.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+	position: relative;
+	margin: 0;
+	padding: 0.75em 1.5em;
+	color: #fff;
+	font-family: var(--sans-font), sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	background-color: var(--blue);
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.button gwbw-icon {
+	font-size: 1.2em;
+	margin: -0.2em 0; /* offset height increase */
+}
+
+.button.button.mid-compact {
+	padding: 0.5em 1em;
+}
+
+.button.button.compact {
+	padding: 0.5em 0.75em;
+}
+
+.button.button.ultra-compact {
+	min-width: 3em;
+	padding: 0.5em;
+}
+
+.button.button.ultra-compact gwbw-icon {
+	font-size: 1.3em;
+}
+
+@media (hover: hover) {
+	.button:hover {
+		box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 5em rgba(0, 0, 0, 0.1), 0 1em 1.5em 0 rgba(0, 0, 0, 0.08);
+	}
+	
+	.button.strong:hover {
+		box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 0 0 5em rgba(255, 255, 255, 0.1), 0 1em 1.5em 0 rgba(0, 0, 0, 0.08);
+	}
+}
+
+.button:active {
+	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 5em rgba(255, 255, 255, 0.2);
+}
+
+.button.positive {
+	background-color: var(--green);
+}
+
+.button.negative {
+	background-color: var(--red);
+}
+
+.button.strong {
+	background-color: var(--dark-blue);
+}
+
+.button.low-priority {
+	background-color: var(--light-blue);
+}
+
+.button.marked {
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 0 0px 3px var(--bright-blue), inset 0 0 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.button.marked:hover {
+	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 5em rgba(0, 0, 0, 0.1),
+				0 0 1px 1px rgba(0, 0, 0, 0.2), inset 0 0 0px 3px var(--bright-blue), inset 0 0 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+.button.disabled,
+button[disabled] {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.sneaky-button {
+	background: none;
+	border: none;
+	padding: 0;
+	outline: none;
+	line-height: inherit;
+	min-height: auto;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.toggle-buttons {
+	display: flex;
+	min-height: 34px;
+}
+
+.toggle-buttons button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	padding: 0.4rem 1.2rem;
+	color: var(--blue);
+	text-shadow: none;
+	font-size: 0.85rem;
+	font-family: var(--sans-font), sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: var(--almost-white);
+	border: none;
+	box-shadow: 0 0 0 1px #ddd;
+	outline: none;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.toggle-buttons gwbw-icon[name^="expand"] {
+	font-size: 1.8em;
+	margin: -0.2em 0;
+}
+
+.toggle-buttons button:hover:after {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(0, 0, 0, 0.075);
+}
+
+.toggle-buttons button.selected {
+	background-color: var(--blue);
+	color: #fff;
+	text-shadow: 0.5px 0.5px 1.5px #00000055;
+	box-shadow: 0 0 0 1px var(--blue), 0 1rem 2rem 0 rgba(0, 0, 0, 0.15);
+	z-index: 2;
+}
+
+.toggle-buttons button:first-of-type {
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.toggle-buttons button:last-of-type {
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.toggle-buttons gwbw-icon {
+	font-size: 1.1rem;
+}

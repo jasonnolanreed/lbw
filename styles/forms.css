@@ -1,0 +1,132 @@
+form {
+	position: relative;
+	opacity: 1;
+	transition: opacity 1s ease 1s;
+}
+
+form.working {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+form:before {
+	content: "";
+	position: absolute;
+	top: -1em; right: -1em; bottom: -1em; left: -1em;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 1s ease 1s;
+}
+
+form.working:before {
+	opacity: 1;
+	animation: working 2s ease infinite;
+}
+
+form label:not(.check),
+.form-input label:not(.check) {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 1.1em;
+}
+
+form label:not(.check):after,
+.form-input label:not(.check):after {
+	content: ":";
+}
+
+label.check {
+	display: inline-flex;
+	align-items: center;
+	white-space: nowrap;
+}
+
+label.check [type=checkbox],
+label.check [type=radio] {
+	min-width: 1.2em;
+	margin-right: 0.5em;
+}
+
+.form-input {
+	margin-bottom: 1.5em;
+}
+
+.form-controls {
+	display: flex;
+	align-items: flex-start;
+	margin: 2em 0;
+}
+
+.form-controls > .button + .button {
+	margin-left: 0.35em;
+}
+
+.form-input--two-wide {
+	display: flex;
+	gap: 1.5em;
+}
+
+.form-input--two-wide > * {
+	width: calc(50%);
+}
+
+.form-input--three-wide {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.form-input--three-wide > * {
+	width: calc(100% / 3);
+}
+
+input[type=text], input[type=password], input[type=number],
+textarea, .faux-input {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0.75em 0.5em;
+	color: var(--blue);
+	font-size: 1em;
+	font-family: var(--sans-font);
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	background-color: var(--almost-white);
+	box-shadow: 0 0 0 1px var(--silver);
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.faux-input:after {
+	/* prevent empty input from collapsing */
+	content: "\00a0";
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, textarea:focus {
+	box-shadow: 0 0 0 1px var(--blue);
+}
+
+input[disabled], textarea[disabled],
+.faux-input[disabled] {
+	color: var(--dark-blue);
+}
+
+textarea {
+	height: 10rem;
+	resize: vertical;
+}
+
+textarea.large {
+	height: 18rem;
+}
+
+@keyframes working {
+	50% {
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+	100% {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+}
