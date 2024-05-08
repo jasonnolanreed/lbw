@@ -1,8 +1,4 @@
 @import "buttons.css";
-@import "forms.css";
-@import "lists.css";
-@import "tables.css";
-@import "sticky-controls.css";
 @import "a11y.css";
 
 *, *:before, *:after { box-sizing: border-box; }
@@ -12,22 +8,23 @@
 }
 
 :root {
-	--serif-font: 'Merriweather';
-	--sans-font: 'Montserrat';
+	--font--lato: 'Lato';
+	--font--quicksand: 'Quicksand';
 
-	--light-blue: #9eafcb;
-	--blue: #396B97;
-	--dark-blue: #1E3760;
-	--bright-blue: #86D9ED;
-	--green: #44A748;
-	--red: #DA3848;
-	--almost-white: #F5F5F5;
-	--silver: #F0F0F0;
-	--gray: #DDD;
-	--medium-gray: #CCC;
-	--dark-gray: #222;
+	--color--white: #fff;
+	--color--sage: #DFEEEF;
+	--color--sky: #91A8D0;
+	--color--sky-bold: #8bc7d7;
+	--color--grape: #1F1F39;
+	--color--storm: #626274;
+	--color--watermelon: #FF6B6B;
+	--color--pink: #ffeeeb;
+	--color--dark-pink: #fea8a8;
+	--color--light-pink: #FFFDF9;
+	--color--school: #fdbd41;
+	--color--gray: #545454;
 
-	--main-max-width: 700px;
+	--scaffold--main-max-width: 1200px;
 }
 
 html, body {
@@ -37,10 +34,10 @@ html, body {
 	min-width: 350px;
 	height: 100%;
 	font-size: 15px;
-	font-family: var(--sans-font), sans-serif;
+	font-family: var(--font--lato), sans-serif;
 	font-weight: 400;
-	color: var(--dark-blue);
-	background-color: #fff;
+	color: var(--color--grape);
+	background-color: var(--color--light-pink);
 }
 
 @media (max-width: 500px) {
@@ -61,14 +58,14 @@ img {
 }
 
 a, a:visited {
-	color: var(--blue);
+	color: var(--color--grape);
 	text-decoration: underline;
 	text-underline-offset: 0.23em;
 }
 
 h1, h2, h3, h4, h5 {
 	margin: 0 0 1rem 0;
-	font-family: var(--serif-font), serif;
+	font-family: var(--font--quicksand), serif;
 	font-weight: 700;
 }
 
@@ -97,14 +94,14 @@ p {
 }
 
 em {
-	font-family: var(--serif-font);
+	font-family: var(--font--quicksand);
 	font-weight: 700;
 	font-style: normal;
 }
 
 small {
 	font-size: 0.85rem;
-	color: var(--light-blue);
+	color: var(--color--grape);
 }
 
 .block {
@@ -145,10 +142,14 @@ small {
 	height: 100%;
 }
 
+.all-but-footer {
+	min-height: 100vh;
+}
+
 .content-container {
-	max-width: var(--main-max-width);
+	max-width: var(--scaffold--main-max-width);
 	margin: 0 auto;
-	padding: 2rem 1rem 3rem 1rem;
+	padding: 2rem 4rem 3rem 4rem;
 	opacity: 0;
 	transition: opacity 0.6s ease;
 }

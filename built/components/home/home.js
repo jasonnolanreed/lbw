@@ -17,4 +17,4 @@ export class Home extends JNRElement {
         }
     }
 }
-customElements.define(`lwb-home`, Home);
+customElements.define(`lbw-home`, Home);

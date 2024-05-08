@@ -41,4 +41,4 @@ export class Icon extends HTMLElement {
 	}
 }
 
-customElements.define(`gwbw-icon`, Icon);
+customElements.define(`lbw-icon`, Icon);
