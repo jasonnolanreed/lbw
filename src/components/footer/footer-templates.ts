@@ -2,7 +2,7 @@ const makeHtml = (component) => (
 `
 <section>
 	<article>
-		<img class="bee-logo" src="/assets/images/bee-logo.svg" alt="Library BeWell Logo" width="296" height="214"/>
+		<img class="bee-logo" src="assets/images/bee-logo.svg" alt="Library BeWell Logo" width="296" height="214"/>
 	</article>
 	<article>
 		<div>
@@ -21,7 +21,7 @@ const makeHtml = (component) => (
 	</article>
 	<article>
 		<div>
-			<img class="op-logo" src="/assets/images/op-library.svg" alt="Oak Park Public Library Logo" width="293" height="119"/>
+			<img class="op-logo" src="assets/images/op-library.svg" alt="Oak Park Public Library Logo" width="293" height="119"/>
 			Address
 			<span>&nbsp;&nbsp;</span>
 			<span class="flat-line">-------------</span>
