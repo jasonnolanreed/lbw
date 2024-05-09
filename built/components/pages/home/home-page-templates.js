@@ -10,7 +10,7 @@ const makeHtml = (component) => (`
 		<p>Library BeWell was designed with teens in mind, but people of all ages are welcome to try the tools in Library BeWell, anywhere and anytime. Library BeWell is run by scientists at Northwestern University in partnership with Cook County Public Libraries.</p>
 	</div>
 	<aside class="illustration">
-		<img class="calm-logo" src="assets/images/calm.svg" alt="Illustration of person relaxing" width="492" height="466"/>
+		<img class="calm-logo" src="assets/images/calm.svg" alt="Illustration of person meditating" width="492" height="466"/>
 	</aside>
 </article>
 `);
@@ -25,7 +25,7 @@ const makeCss = (component) => (`
 
 article {
 	display: flex;
-	gap: 2rem 4rem;
+	gap: 4rem 2rem;
 }
 
 .copy {
@@ -34,6 +34,16 @@ article {
 
 .illustration {
 	width: 45cqw;
+	position: relative;
+}
+
+.illustration:before {
+	content: "";
+	position: absolute;
+	top: 0; right: -20%; bottom: -20%; left: -40%;
+	background-image: url(assets/images/geometry.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .illustration img {
@@ -46,7 +56,7 @@ article {
 	max-width: 100%;
 }
 
-@container cq-page-home (width < 1030px) {
+@container cq-page-home (width < 950px) {
 	article {
 		flex-wrap: wrap;
 		max-width: 700px;

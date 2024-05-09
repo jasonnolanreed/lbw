@@ -25,6 +25,13 @@
 	--color--gray: #545454;
 
 	--scaffold--main-max-width: 1200px;
+	--scaffold--main-side-padding: 4rem;
+}
+
+@media (max-width: 800px) {
+	:root {
+		--scaffold--main-side-padding: 2rem;
+	}
 }
 
 html, body {
@@ -107,7 +114,6 @@ em {
 
 small {
 	font-size: 0.85rem;
-	color: var(--color--grape);
 }
 
 .block {
@@ -135,6 +141,20 @@ small {
 	pointer-events: none;
 }
 
+.no-click {
+	pointer-events: none;
+}
+
+.click-zone-5 {
+	padding: 5px;
+	margin: -5px;
+}
+
+.click-zone-10 {
+	padding: 10px;
+	margin: -10px;
+}
+
 .expand {
 	width: 100%;
 }
@@ -155,7 +175,7 @@ small {
 .content-container {
 	max-width: var(--scaffold--main-max-width);
 	margin: 0 auto;
-	padding: 3rem 4rem 4rem 4rem;
+	padding: 3rem var(--scaffold--main-side-padding) 4rem var(--scaffold--main-side-padding);
 	opacity: 0;
 	transition: opacity 0.6s ease;
 }

@@ -2,10 +2,10 @@ const makeHtml = (component) => (`
 <section>
 	<span class="logo">Library BeWell</span>
 	<nav>
-		<a href="#/home" ${component.view === "home" ? "active" : ""}>Home</a>
-		<a href="#/resources" ${component.view === "resources" ? "active" : ""}>Mental Health Resources</a>
-		<a href="#/testimonials" ${component.view === "testimonials" ? "active" : ""}>Testimonials</a>
-		<a href="#/about" ${component.view === "about" ? "active" : ""}>About Us</a>
+		<a href="#/home" ${component.view === "home" ? "active" : ""} class="click-zone-10">Home</a>
+		<a href="#/resources" ${component.view === "resources" ? "active" : ""} class="click-zone-10">Mental Health Resources</a>
+		<a href="#/testimonials" ${component.view === "testimonials" ? "active" : ""} class="click-zone-10">Testimonials</a>
+		<a href="#/about" ${component.view === "about" ? "active" : ""} class="click-zone-10">About Us</a>
 	</nav>
 </section>
 `);
@@ -21,7 +21,7 @@ const makeCss = (component) => (`
 section {
 	max-width: var(--scaffold--main-max-width);
 	margin: 0 auto;
-	padding: 2rem 4rem;
+	padding: 2rem var(--scaffold--main-side-padding);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
