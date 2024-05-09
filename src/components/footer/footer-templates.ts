@@ -42,6 +42,8 @@ const makeCss = (component) => (
 @import "styles/global-styles.css";
 
 :host {
+	container-name: cq-footer;
+	container-type: inline-size;
 	background-color: var(--color--sky);
 	color: var(--color--white);
 }
@@ -53,20 +55,19 @@ section {
 	padding: 6rem 4rem 10rem 4rem;
 	display: flex;
 	align-items: stretch;
-	gap: 1.5em 3em;
-	font-size: 1.12em;
+	gap: 3rem;
 	line-height: 1.5em;
 }
 
 article {
-	flex: 1;
+	width: calc(100cqw / 3);
 	border-right: 1px solid var(--color--white);
 	display: flex;
 	align-items: center;
 }
 
 article:last-of-type {
-	border: none;
+	border: none !important;
 }
 
 .bee-logo {
@@ -76,7 +77,7 @@ article:last-of-type {
 }
 
 .northwestern {
-	margin-bottom: 1.3em;
+	margin-bottom: 1.3rem;
 }
 
 .flat-line {
@@ -87,7 +88,21 @@ article:last-of-type {
 	width: 140px;
 	max-width: 100%;
 	height: auto;
-	margin-bottom: 1.3em;
+	margin-bottom: 1.3rem;
+}
+
+@container cq-footer (width < 1100px) {
+	section {
+		flex-wrap: wrap;
+		max-width: 500px;
+	}
+
+	article {
+		width: 100cqw;
+		border-right: none;
+		border-bottom: 1px solid var(--color--white);
+		padding-bottom: 3rem;
+	}
 }
 </style>
 `

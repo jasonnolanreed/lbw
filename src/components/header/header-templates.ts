@@ -34,7 +34,7 @@ section {
 }
 
 .logo {
-	font-size: 1.25em;
+	font-size: 1.125em;
 	font-weight: 700;
 	letter-spacing: 0.2em;
 }
@@ -47,7 +47,6 @@ nav {
 
 nav a,
 nav a:visited {
-	font-size: 1.12em;
 	color: var(--color--white);
 	text-decoration: none;
 }
@@ -57,7 +56,8 @@ nav a:hover {
 }
 
 nav a[active] {
-	font-weight: 700;
+	/*font-weight: 500;*/
+	text-shadow: 0 0 0.3px var(--color--white);
 	text-decoration: underline;
 }
 </style>

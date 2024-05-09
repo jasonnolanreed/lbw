@@ -7,67 +7,28 @@
 	margin: 0;
 	padding: 0.75em 1.5em;
 	color: #fff;
-	font-family: var(--font--lato), sans-serif;
+	font-family: var(--font--quicksand), sans-serif;
 	font-size: 1.1em;
 	font-weight: normal;
 	text-decoration: none;
-	text-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1);
 	background-color: var(--color--sky);
 	border: none;
-	border-radius: 2px;
+	border-radius: 2em;
 	outline: none;
 	cursor: pointer;
 	appearance: none;
 	-webkit-appearance: none;
 }
 
-.button.button.mid-compact {
-	padding: 0.5em 1em;
-}
-
-.button.button.compact {
-	padding: 0.5em 0.75em;
-}
-
-.button.button.ultra-compact {
-	min-width: 3em;
-	padding: 0.5em;
-}
-
-.button.button.ultra-compact gwbw-icon {
-	font-size: 1.3em;
-}
-
 @media (hover: hover) {
 	.button:hover {
-		box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 5em rgba(0, 0, 0, 0.1), 0 1em 1.5em 0 rgba(0, 0, 0, 0.08);
-	}
-	
-	.button.strong:hover {
-		box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 0 0 5em rgba(255, 255, 255, 0.1), 0 1em 1.5em 0 rgba(0, 0, 0, 0.08);
+		box-shadow: inset 0 0 0 5em rgba(0, 0, 0, 0.1), 0 1em 1.5em 0 rgba(0, 0, 0, 0.08);
 	}
 }
 
 .button:active {
-	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 5em rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0 0 0 5em rgba(255, 255, 255, 0.2);
 }
-
-/* .button.positive {
-	background-color: var(--green);
-}
-
-.button.negative {
-	background-color: var(--red);
-}
-
-.button.strong {
-	background-color: var(--dark-blue);
-}
-
-.button.low-priority {
-	background-color: var(--light-blue);
-} */
 
 .button.disabled,
 button[disabled] {

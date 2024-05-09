@@ -33,7 +33,7 @@ html, body {
 	padding: 0;
 	min-width: 350px;
 	height: 100%;
-	font-size: 15px;
+	font-size: 18px;
 	font-family: var(--font--lato), sans-serif;
 	font-weight: 400;
 	color: var(--color--grape);
@@ -42,13 +42,13 @@ html, body {
 
 @media (max-width: 500px) {
 	html, body {
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 
 @media (max-width: 400px) {
 	html, body {
-		font-size: 13px;
+		font-size: 15px;
 	}
 }
 
@@ -73,6 +73,11 @@ h1 {
 	font-size: 2rem;
 }
 
+h1.jumbo {
+	font-size: 3.89rem;
+	line-height: 4.44rem;
+}
+
 h2 {
 	font-size: 1.5rem;
 }
@@ -90,6 +95,7 @@ h5 {
 }
 
 p {
+	line-height: 2;
 	margin: 0 0 1.5rem 0;
 }
 
@@ -149,7 +155,7 @@ small {
 .content-container {
 	max-width: var(--scaffold--main-max-width);
 	margin: 0 auto;
-	padding: 2rem 4rem 3rem 4rem;
+	padding: 3rem 4rem 4rem 4rem;
 	opacity: 0;
 	transition: opacity 0.6s ease;
 }

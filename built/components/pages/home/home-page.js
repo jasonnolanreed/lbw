@@ -1,7 +1,7 @@
-import { router } from '../../router.js';
-import { JNRElement } from '../../classes/jnr-element.js';
-import { makeTemplate } from './header-templates.js';
-export class Header extends JNRElement {
+import { router } from '../../../router.js';
+import { JNRElement } from '../../../classes/jnr-element.js';
+import { makeTemplate } from './home-page-templates.js';
+export class HomePage extends JNRElement {
     loadingTimeout = null;
     view = router[`view`] || ``;
     constructor() {
@@ -24,4 +24,4 @@ export class Header extends JNRElement {
         }
     }
 }
-customElements.define(`lbw-header`, Header);
+customElements.define(`lbw-page-home`, HomePage);
