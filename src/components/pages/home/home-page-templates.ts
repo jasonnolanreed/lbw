@@ -12,6 +12,10 @@ const makeHtml = (component) => (
 	</div>
 	<aside class="illustration">
 		<img class="calm-logo" src="assets/images/calm.svg" alt="Illustration of person meditating" width="492" height="466"/>
+		<br>
+		<a href="#0">
+			<img class="sos-button" src="assets/images/sos.svg" alt="Toggle button with s.o.s. label" width="264" height="152"/>
+		</a>
 	</aside>
 </article>
 `
@@ -39,6 +43,7 @@ article {
 .illustration {
 	width: 45cqw;
 	position: relative;
+	text-align: right;
 }
 
 .illustration:before {
@@ -48,10 +53,18 @@ article {
 	background-image: url(assets/images/geometry.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
+	pointer-events: none;
 }
 
-.illustration img {
+.illustration .calm-logo {
 	width: 100%;
+	height: auto;
+}
+
+.illustration .sos-button {
+	display: inline-block;
+	width: 235px;
+	max-width: 100%;
 	height: auto;
 }
 
@@ -73,6 +86,7 @@ article {
 
 	.illustration {
 		order: -1;
+		text-align: center;
 	}
 
 	.copy {
