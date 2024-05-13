@@ -5,16 +5,18 @@ export class LoadView {
 	// inserts into DOM with $view as parent, fetches HTML for
 	// view (if supplied), parses and loads ITS contained scripts, and inserts
 	// into DOM for $view -> .content-container as parent
-	static layout($view, layoutUrl, viewUrl?) {
+	static layout($view: HTMLElement, layoutUrl: string, viewUrl?: string) {
+		window.scrollTo(0, 0);
+
 		fetch(layoutUrl)
-		.then(response => response.text(), error => { throw new Error(); })
+		.then(response => response.text(), error => { throw new Error(error); })
 		.then(responseAsText => {
 			$view.innerHTML = responseAsText;
 			const $$scripts = $view.querySelectorAll(`script[src]`);
 			$$scripts.forEach($script => {
 				let $newScript = document.createElement(`script`);
 				$newScript.src = $script.getAttribute(`src`);
-				if ($script.type === `module`) {
+				if ($script.getAttribute(`type`) === `module`) {
 					$newScript.type = `module`;
 				}
 				$script.parentNode.removeChild($script);
@@ -28,9 +30,8 @@ export class LoadView {
 				}, 0);
 			}
 		})
-		.catch(error => null)
+		.catch(error => null);
 
-		LoadView._scrollToTop();
 		(document.querySelector(`jnr-loader`) as Loader).loading = true;
 		const $contentContainer = $view.querySelector(`.content-container`);
 		if ($contentContainer) {
@@ -40,7 +41,7 @@ export class LoadView {
 
 	// Fetches HTML for view, parses and loads contained scripts,
 	// and inserts into DOM with $view as parent
-	static _fetch($view, viewUrl) {
+	static _fetch($view: HTMLElement, viewUrl: string) {
 		fetch(viewUrl)
 		.then(response => response.text())
 		.then(responseAsText => {
@@ -50,29 +51,18 @@ export class LoadView {
 			$$scripts.forEach($script => {
 				let $newScript = document.createElement(`script`);
 				$newScript.src = $script.getAttribute(`src`);
-				if ($script.type === `module`) {
+				if ($script.getAttribute(`type`) === `module`) {
 					$newScript.type = `module`;
 				}
 				$script.parentNode.removeChild($script);
 				$view.appendChild($newScript);
 			});
 			$$inlineScripts.forEach($script => {
-				eval($script.innerText);
+				eval($script.textContent);
 			});
 			requestAnimationFrame(_ => {
 				$view.classList.add(`in`);
 			});
 		});
-	}
-
-	static _scrollToTop() {
-		try {
-			const doScroll = window.scroll || window.scrollTo;
-			doScroll({top: 0, left: 0, behavior: `instant`});
-		} catch(error) {
-			try {
-				window.scrollTo(0, 0);
-			} catch(error) {}
-		}
 	}
 }
